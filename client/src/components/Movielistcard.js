@@ -1,13 +1,10 @@
 import React, { Component } from "react";
-import { Button, Card, CardColumns, NavItem } from "react-bootstrap";
+import { Button, Card, CardColumns } from "react-bootstrap";
 import axios from "axios";
 import dayjs from "dayjs";
 
-import "react-datepicker/dist/react-datepicker.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Date from "./Date";
-import { useAuth0 } from "@auth0/auth0-react";
-
 export default class Movielistcard extends Component {
   constructor(props) {
     super(props);
@@ -73,7 +70,10 @@ export default class Movielistcard extends Component {
         "http://localhost:4000/Movieusers/create-movieuser",
         MovieuserObject
       )
-      .then((res) => console.log(res.data));
+      .then(
+        (res) => console.log(res.data),
+        console.log("Movie User successfully Created")
+      );
   }
 
   handledate = (values) => {
@@ -101,7 +101,7 @@ export default class Movielistcard extends Component {
             <Card.Img variant="top" src={this.props.obj.url} />
             <Card.Body>
               <Card.Title
-                controlId="movietitle"
+                controlid="movietitle"
                 type="text"
                 value={this.props.obj.name}
                 onChange={this.onChangeMovieusermovietitle}
@@ -110,7 +110,7 @@ export default class Movielistcard extends Component {
               </Card.Title>
               <Card.Text>Gener: {this.props.obj.gener}</Card.Text>
               <Card.Text
-                controlId="rentalamount"
+                controlid="rentalamount"
                 type="text"
                 value={this.state.rentalamount}
                 onChange={this.onChangeMovieuserrentalamount}
@@ -120,9 +120,9 @@ export default class Movielistcard extends Component {
               <Card.Text>
                 Avalable Quantity: {this.props.obj.noofcopies}
               </Card.Text>
-              <Card.Text>
-                <Date onok={this.handledate} clear={this.handleclean} />
-              </Card.Text>
+              {/* <Card.Text> */}
+              <Date onok={this.handledate} clear={this.handleclean} />
+              {/* </Card.Text> */}
               <Card.Text>Number of days: {this.state.noofdays}</Card.Text>
               <Card.Text></Card.Text>
               <Card.Text>

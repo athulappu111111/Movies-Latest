@@ -29,7 +29,7 @@ export default class Createmovie extends Component {
 
     return (
       <div className="forms">
-        <div classname="form-wrapper">
+        <div className="form-wrapper">
           <Formik
             initialValues={{
               name: "",

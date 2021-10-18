@@ -8,7 +8,7 @@ const Profile = () => {
     isAuthenticated && (
       <div>
         <Image className="profile" src={user.picture} roundedCircle />
-        <Nav>Hi {user.name}</Nav>
+        <Nav>Hi {user.name} </Nav>
       </div>
     )
   );

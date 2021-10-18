@@ -14,6 +14,7 @@ mongoose.Promise = global.Promise;
 mongoose
   .connect(dbConfig.db, {
     useNewUrlParser: true,
+    useUnifiedTopology: true,
   })
   .then(
     () => {

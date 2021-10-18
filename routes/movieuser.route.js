@@ -2,6 +2,7 @@ let mongoose = require("mongoose"),
   express = require("express"),
   router = express.Router();
 const createError = require("http-errors");
+mongoose.set("useFindAndModify", false);
 
 let movieuserSchema = require("../models/movieuser");
 
